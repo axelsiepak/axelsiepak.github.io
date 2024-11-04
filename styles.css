@@ -14,10 +14,11 @@ html.dark {
   --color-toggle-accent: #a076ce;
 }
 
-/*  Apply colors to the page */
+/*  Apply colors to html and body with a transition*/
 html, body {
   background-color: var(--color-bg);
   color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Color Scheme Toggle Switch with animation */
