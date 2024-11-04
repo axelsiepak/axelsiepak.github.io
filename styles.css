@@ -82,13 +82,6 @@ html, body {
   width: 30px;
 }
 
-/* Font */
-@font-face {
-  font-family: "bcbd";
-  src: url('/fonts/bcbd.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 @font-face {
   font-family: "Iosevka";
   src: url('/fonts/Iosevka.ttf') format('truetype');
