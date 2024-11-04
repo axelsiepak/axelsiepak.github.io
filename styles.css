@@ -14,18 +14,13 @@ html.dark {
   --color-toggle-accent: #a076ce;
 }
 
-/*
-  Apply colors to general doc selectors
-*/
+/*  Apply colors to the page */
 html, body {
   background-color: var(--color-bg);
   color: var(--color-text);
 }
 
-/*
-  Color Scheme Toggle Switch
-  - Styled checkbox with slight animation when toggling
-*/
+/* Color Scheme Toggle Switch with animation */
 #color-mode-switch {
   display: flex;
   align-items: center;
