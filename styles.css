@@ -84,7 +84,7 @@ html, body {
 
 @font-face {
   font-family: "Iosevka";
-  src: url('./assets/fonts/Iosevka.ttf') format('truetype');
+  src: url('./assets/Iosevka.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
