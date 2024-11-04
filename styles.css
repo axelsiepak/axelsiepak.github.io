@@ -80,12 +80,16 @@ html, body {
 
 /* Font */
 @font-face {
-    font-family: "bcbd";
-    src: url(extras/bcbd.ttf);
+  font-family: "bcbd";
+  src: url('/fonts/bcbd.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-    font-family: "Iosevka";
-    src: url(extras/Iosevka.ttf);
+  font-family: "Iosevka";
+  src: url('/fonts/Iosevka.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
@@ -119,6 +123,7 @@ body {
 #menuToggle a {
   text-decoration: none;
   color: var(--color-text);
+  font-family: "bcbd", sans-serif;
 
   transition: color 0.25s ease;
 }
@@ -197,7 +202,6 @@ body {
 #menu li {
   padding: 10px 0;
   font-size: 51px;
-  font-family: "bcbd", sans-serif;
 }
 
 /* And let's slide it in from the left */
