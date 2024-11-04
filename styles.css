@@ -91,123 +91,118 @@ html, body {
 body {
   margin: 0;
   padding: 0;
-  font-family: Iosevka;
+  font-family: "Iosevka", sans-serif;
 }
 
 /* Header */
 .header {
-  box-shadow: 1px 1px 4px 0 rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
-  width: 100%;
-  z-index: 3;
-  padding: 20px;
 }
 
-.header ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  overflow: hidden;
-}
-
-/* Header Links*/
-.header a {
-  color: var(--color-text)
-}
-
-.header li a {
+#menuToggle {
   display: block;
-  padding: 10px 10px;
-  border-right: 1px solid var(--color-bg2);
-  text-decoration: none;
-}
-
-.header li a:hover,
-.header .menu-btn:hover {
-  background-color: var(--color-bg2);
-  color: red;
-}
-
-.header .logo {
-  display: block;
-  float: left;
-  font-size: 2em;
-  padding: 10px 20px;
-  text-decoration: none;
-}
-
-/* Menu */
-
-.header .menu {
-  clear: both;
-  max-height: 0;
-  transition: max-height .2s ease-out;
-}
-
-/* Menu icon */
-
-.header .menu-icon {
-  cursor: pointer;
-  display: inline-block;
-  float: left;
-  padding: 28px 20px;
-  position: relative;
+  /* You can also use relative/absolute here if you want to stay on the top */
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
   user-select: none;
 }
 
-.header .menu-icon .navicon {
-  background: var(--color-text);
-  display: block;
-  height: 2px;
-  position: relative;
-  transition: background .2s ease-out;
-  width: 18px;
+/* Nav Links*/
+#menuToggle a {
+  text-decoration: none;
+  color: var(--color-text);
+
+  transition: color 0.25s ease;
 }
 
-.header .menu-icon .navicon:before,
-.header .menu-icon .navicon:after {
-  background: #333;
-  content: '';
+#menuToggle a:hover {
+  color: red;
+}
+
+
+#menuToggle input {
   display: block;
-  height: 100%;
+  width: 40px;
+  height: 32px;
   position: absolute;
-  transition: all .2s ease-out;
-  width: 100%;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
 }
 
-.header .menu-icon .navicon:before {
-  top: 5px;
+/* Hamburger Icon */
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: var(--color-text);
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
 }
 
-.header .menu-icon .navicon:after {
-  top: -5px;
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
 }
 
-/* Menu Btn */
-
-.header .menu-btn {
-  display: none;
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
 }
 
-.header .menu-btn:checked ~ .menu {
-  max-height: 240px;
+/* Menu posisoned in the top-left corner*/
+#menu {
+  position: absolute;
+  max-width: 400px;
+  width: 100vw;
+  max-height: 100vh;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background: var(--color-bg);
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
 }
 
-.header .menu-btn:checked ~ .menu-icon .navicon {
-  background: transparent;
+#menu li {
+  padding: 10px 0;
+  font-size: 51px;
+  font-family: "bcbd", sans-serif;
 }
 
-.header .menu-btn:checked ~ .menu-icon .navicon:before {
-  transform: rotate(-45deg);
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon:after {
-  transform: rotate(45deg);
-}
-
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-  top: 0;
+/* And let's slide it in from the left */
+#menuToggle input:checked ~ ul {
+  transform: none;
 }
 
 .gallery {

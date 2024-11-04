@@ -21,30 +21,36 @@
   </head>
 
   <body>
+    <!-- Anti framing-->
     <script type="text/javascript">
       if (parent.frames.length > 0) {
         parent.location.href = self.document.location
       }
     </script>
 
+    <!-- Hamburger Navigation Menu -->
+    <nav role="navigation">
+      <div id="menuToggle">
+        <input type="checkbox" aria-label="Toggle Navigaton Menu">
+    
+        <!-- Hamburger Icon -->
+        <span></span><span></span><span></span>
+        
+        <!-- Menu -->
+        <ul id="menu">
+          <a href="home.html"><li>Home</li></a>
+          <a href="about.html"><li>About</li></a>
+          <a href="contact.html"><li>Contact</li></a>
+        </ul>
+      </div>
+    </nav>
+
     <!-- Header -->
     <header class="header">
 
-      <!-- Hamburger Menu -->
-      <input class="menu-btn" type="checkbox" id="menu-btn" aria-label="Toggle Navigaton Menu">
-      <label class="menu-icon" for="menu-btn">
-        <span class="navicon"></span>
-      </label>
-      
       <!-- Logo -->
       <a href="#" class="logo">0xcpm Gallery</a>
 
-      <!-- Nav Links -->
-      <ul class="menu">
-        <li><a href="home.html">home</a></li>
-        <li><a href="about.html">about</a></li>
-        <li><a href="contact.html">contact</a></li>
-      </ul>
       <!-- Dark Mode Switch -->
        <div id="color-mode-switch">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
